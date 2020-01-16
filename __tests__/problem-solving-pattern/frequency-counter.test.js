@@ -1,4 +1,5 @@
 const same = require('../../problem-solving-pattern/frequency-counter');
+const isAnagram = require('../../problem-solving-pattern/isAnagram');
 
 test('different length', () => {
   expect(same([1, 2, 3], [1, 9])).toBe(false);
@@ -14,4 +15,16 @@ test('not same frequency', () => {
 
 test('regular accepted case', () => {
   expect(same([1, 2, 3, 2, 2, 2, 2], [9, 1, 4, 4, 4, 4, 4])).toBe(true);
+});
+
+test('empty string', () => {
+  expect(isAnagram('', '')).toBe(true);
+});
+
+test('regular false case', () => {
+  expect(isAnagram('aaz', 'zza')).toBe(false);
+});
+
+test('regular acceptable case', () => {
+  expect(isAnagram('anagram', 'nagaram')).toBe(true);
 });
