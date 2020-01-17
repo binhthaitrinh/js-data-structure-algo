@@ -7,14 +7,24 @@
  */
 
 function twoSum(nums, target) {
-  var mapValueToIndex = {};
+  // var mapValueToIndex = {};
 
+  // for (let i = 0; i < nums.length; i++) {
+  //   let comp = target - nums[i];
+  //   if (mapValueToIndex.hasOwnProperty(comp)) {
+  //     return [mapValueToIndex[comp], i];
+  //   }
+  //   mapValueToIndex[nums[i]] = i;
+  // }
+
+  var visited = {};
+  var comp;
   for (let i = 0; i < nums.length; i++) {
-    let comp = target - nums[i];
-    if (mapValueToIndex.hasOwnProperty(comp)) {
-      return [mapValueToIndex[comp], i];
+    comp = target - nums[i];
+    if (visited.hasOwnProperty(comp)) {
+      return [visited[comp], i];
     }
-    mapValueToIndex[nums[i]] = i;
+    visited[nums[i]] = i;
   }
 }
 
