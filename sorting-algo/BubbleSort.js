@@ -22,13 +22,15 @@ function bubbleSortOptimized(arr) {
     var didSwap = false;
     let j = 0;
 
-    while (j < i && didSwap) {
+    while (j < i) {
       if (arr[j] >= arr[j + 1]) {
         ArrayUtil.swap(arr, j, j + 1);
         didSwap = true;
       }
       j++;
     }
+
+    if (!didSwap) break;
   }
 
   return arr;
